@@ -1,0 +1,9 @@
+.home {
+  .article-preview-showcase {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, 300px);
+    grid-gap: 2rem;
+    justify-content: space-around;
+    // background-color: green;
+  }
+}
