@@ -1,9 +1,29 @@
 .home {
+  .home-grid {
+    display: grid;
+    grid-template-columns: 1fr 100px;
+  }
+  .hero {
+    background-color: $primary-color;
+    margin-bottom: 5rem;
+  }
   .article-preview-showcase {
     display: grid;
-    grid-template-columns: repeat(auto-fit, 300px);
-    grid-gap: 2rem;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    grid-gap: 5rem;
     justify-content: space-around;
-    // background-color: green;
+  }
+  .tag-bar {
+    margin: 1rem;
+    * {
+      margin: 0.1rem;
+    }
+  }
+
+  .pagination {
+    margin: 1rem;
+  }
+  .page-number {
+    margin: 1rem;
   }
 }

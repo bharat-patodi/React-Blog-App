@@ -1,0 +1,24 @@
+form {
+  background-color: darken($primary-color, 10%);
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+  padding: 2rem;
+  margin: 0 auto;
+  label {
+    display: flex;
+    justify-content: space-between;
+  }
+  * {
+    // margin-top: 1rem;
+  }
+}
+
+input {
+  margin-left: 1rem;
+  &:invalid {
+    border: 2px solid rgb(245, 121, 121);
+  }
+
+  &:valid {
+    border: 2px solid black;
+  }
+}

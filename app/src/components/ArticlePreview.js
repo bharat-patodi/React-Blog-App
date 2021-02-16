@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 export default function ArticlePreview(props) {
   return (
     <article className="article-preview">
@@ -5,8 +7,12 @@ export default function ArticlePreview(props) {
       <p>--- {props.author.username}</p>
       <p>{props.description.split(" ").slice(0, 30).join(" ") + " ..."}</p>
       <p>Dated: {props.createdAt}</p>
-      <button>Read More</button>
-      <button>💖</button>
+      <div className="actions">
+        <Link to={`/articles/${props.slug}`}>
+          <button className="standard-btn">Read More</button>
+        </Link>
+        <button className="standard-btn">💖</button>
+      </div>
     </article>
   );
 }

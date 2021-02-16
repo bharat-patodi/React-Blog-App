@@ -1,5 +1,13 @@
-.article-preview {
-  border: 3px solid palevioletred;
-  background-color: #ecf0f1;
-  padding: 1rem;
+.article {
+  .hero {
+    display: flex;
+    gap: 1rem;
+    border-bottom: 1px solid gray;
+    margin-bottom: 2rem;
+    padding-bottom: 2rem;
+    img {
+      max-width: 100px;
+      border-radius: 50%;
+    }
+  }
 }

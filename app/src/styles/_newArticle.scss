@@ -1,0 +1,24 @@
+.new-article-page {
+  display: grid;
+}
+
+.all-tags {
+  display: flex;
+  justify-content: left;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.new-article-form {
+  .tag-entry {
+    padding: 0 1rem;
+    border: 3px solid $primary-color;
+    border-radius: 0.25rem;
+    font-size: 0.9rem;
+    color: #2d2d2d;
+  }
+  * {
+    margin-top: 1rem;
+  }
+}

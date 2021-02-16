@@ -3,24 +3,33 @@ import ReactDOM from "react-dom";
 import "./index.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
-import { BrowserRouter as Router, Route, NavLink } from "react-router-dom";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Login from "./components/LoginPage";
 import Register from "./components/RegisterPage";
 import Header from "./components/Header";
+import Footer from "./components/Footer";
+import Article from "./components/Article";
+import NewArticle from "./components/NewArticle";
 
 ReactDOM.render(
   <React.StrictMode>
     <Router>
       <Header />
-      <Route exact path="/" component={App} />
-      {/* <Route path="/login">
-        <Login />
-      </Route> */}
-      {/* <Route path="/register">
-        <Register />
-      </Route> */}
+      <Switch>
+        <Route exact path="/" component={App} />
+        <Route path="/login">
+          <Login />
+        </Route>
+        <Route path="/register">
+          <Register />
+        </Route>
+        <Route path="/articles/new">
+          <NewArticle />
+        </Route>
+        <Route path="/articles/:id" component={Article} />
+      </Switch>
+      <Footer />
     </Router>
-    {/* <h1>Hi</h1> */}
   </React.StrictMode>,
   document.getElementById("root")
 );

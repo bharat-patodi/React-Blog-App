@@ -1,9 +1,21 @@
+@import "styles/reset";
+@import "styles/variables";
+@import "styles/base";
 @import "styles/home";
 @import "styles/loader";
-@import "styles/variables";
-@import "styles/article";
+@import "styles/article-preview";
 @import "styles/header";
+@import "styles/typography";
+@import "styles/modular";
+@import "styles/login-register";
+@import "styles/article";
+@import "styles/footer";
+@import "styles/newArticle";
 
 .App {
   text-align: center;
+}
+
+body {
+  background-color: $primary-color;
 }

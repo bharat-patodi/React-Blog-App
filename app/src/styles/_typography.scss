@@ -1,0 +1,32 @@
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Slab:wght@300;400;700&family=Lato:wght@400;700&display=swap");
+
+body {
+  font-family: "Lato", sans-serif;
+  color: #2d2d2d;
+  line-height: 1.5;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: "Josefin Slab", serif;
+  color: #2d2d2d;
+  font-weight: 300;
+}
+
+h1 {
+  font-size: 5rem;
+  line-height: 1.5;
+  text-align: center;
+}
+
+h2 {
+  font-size: 3rem;
+  text-align: center;
+  line-height: 1.5;
+}
+
+h3 {
+  font-size: 2rem;
+}
