@@ -1,7 +1,7 @@
 .home {
   .home-grid {
     display: grid;
-    grid-template-columns: 1fr 100px;
+    grid-template-columns: 1fr minmax(150px, 250px);
   }
   .hero {
     background-color: $primary-color;
@@ -20,10 +20,15 @@
     }
   }
 
+  .tag {
+    font-size: 0.8rem;
+  }
+
   .pagination {
     margin: 1rem;
   }
   .page-number {
     margin: 1rem;
+    cursor: pointer;
   }
 }

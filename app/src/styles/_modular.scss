@@ -6,8 +6,22 @@
   cursor: pointer;
   margin-right: 1rem;
   padding: 0.5rem 1rem;
+  color: darken($secondary-color, 60%);
+  // display: block;
+  // box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px,
+  //   rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
   &:hover {
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px,
+      rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
     background-color: darken($secondary-color, 20%);
+    font-weight: 700;
+    color: darken($secondary-color, 60%);
+  }
+  &:active {
+    background-color: darken($secondary-color, 10%);
+    font-weight: 400;
+    color: #2d2d2d;
   }
 }
 
@@ -21,7 +35,15 @@
   background-color: black;
   color: black;
   color: $tertiary-color;
-  padding: 0.1rem;
+  padding: 0.1rem 0.5rem;
   border-radius: 0.25rem;
-  // border-bottom: 3px solid black;
+}
+
+.errorMsg {
+  color: $quarternary-color;
+  font-size: 0.8rem;
+  font-weight: 700;
+  display: inline-block;
+  margin-bottom: 0.3rem;
+  padding: 0 0.3rem;
 }

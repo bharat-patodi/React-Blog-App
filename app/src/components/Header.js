@@ -19,6 +19,15 @@ export default function Header() {
         <NavLink to="/articles/new" activeClassName="active-link">
           New Article
         </NavLink>
+        <NavLink to="/settings" activeClassName="active-link">
+          Settings
+        </NavLink>
+        <NavLink to="/user/:id" activeClassName="active-link">
+          User
+        </NavLink>
+        <NavLink to="/" exact activeClassName="active-link">
+          Logout
+        </NavLink>
       </nav>
     </header>
   );

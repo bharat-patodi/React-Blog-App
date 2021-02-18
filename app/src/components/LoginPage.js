@@ -5,23 +5,49 @@ class LoginPage extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
+      email: "",
+      password: "",
+      errors: {
+        email: "",
+        password: "",
+      },
       currentUser: "",
     };
   }
 
-  handleSubmit = () => {
-    // fetch("https://mighty-oasis-08080.herokuapp.com/api/users/login", {
-    //   method: "POST",
-    //   headers: {
-    //     "Content-Type": "application/json;charset=utf-8",
-    //   },
-    //   body: JSON.stringify(this.state.currentUser),
-    // })
-    //   .then((res) => res.json())
-    //   .then((user) => {
-    //     console.log("User Exists", user);
-    //   });
-    console.log("Create the login mechanism");
+  handleChange = (e) => {
+    let { name, value } = e.target;
+    let errors = { ...this.state.errors };
+
+    switch (name) {
+      case "email":
+        let emailError =
+          value.indexOf("@") === -1 ? "❌ Email does not contain @" : "";
+        errors.email = emailError;
+        break;
+
+      case "password":
+        let passwordError;
+        if (value.length < 7) {
+          passwordError =
+            "❌ Password must be at least six characters in length";
+        }
+        let regex = /^(?=.*[A-Za-z])(?=.*?[0-9])[A-Za-z\d]/;
+        if (!regex.test(value)) {
+          passwordError = "❌ Password must contain a character and a number";
+        }
+        errors.password = passwordError;
+        break;
+
+      default:
+        return errors;
+    }
+
+    this.setState({ [name]: value, errors });
+  };
+
+  handleSubmit = (e) => {
+    e.preventDefault();
   };
 
   render() {
@@ -37,8 +63,11 @@ class LoginPage extends React.Component {
               id="email"
               placeholder="email"
               required
+              onChange={this.handleChange}
+              value={this.state.email}
             />
           </label>
+          <span className="errorMsg">{this.state.errors.email}</span>
           <br />
           <label htmlFor="password">
             Password
@@ -47,13 +76,20 @@ class LoginPage extends React.Component {
               name="password"
               id="password"
               placeholder="password"
-              minLength={6}
-              pattern=".*\d+[a-z]+.*"
+              onChange={this.handleChange}
+              value={this.state.password}
+              // pattern=".*\d+[a-z]+.*"
               required
             />
           </label>
+          <span className="errorMsg">{this.state.errors.password}</span>
           <br />
-          <button type="submit" value="submit">
+          <button
+            className="standard-btn"
+            type="submit"
+            value="submit"
+            disabled={this.state.errors.email || this.state.errors.password}
+          >
             Submit
           </button>
           <br />

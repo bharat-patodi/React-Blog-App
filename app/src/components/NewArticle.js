@@ -1,4 +1,5 @@
 import React from "react";
+import { Redirect, withRouter } from "react-router-dom";
 
 class NewArticle extends React.Component {
   constructor(props) {
@@ -92,7 +93,16 @@ class NewArticle extends React.Component {
       // }),
     })
       .then((res) => res.json())
-      .then((res) => console.log(res));
+      .then((res) => {
+        console.log(res);
+        console.log("Now we redirect", res);
+        this.props.history.push("/about");
+        // return <Redirect to="/about" />;
+      });
+  };
+
+  handleRedirect = () => {
+    return <Redirect to="/about" />;
   };
 
   render() {
@@ -157,9 +167,12 @@ class NewArticle extends React.Component {
           <br />
           <button type="submit">Add Article</button>
         </form>
+        {/* <button type="submit" onClick={this.handleRedirect}>
+          Redirect
+        </button> */}
       </div>
     );
   }
 }
 
-export default NewArticle;
+export default withRouter(NewArticle);

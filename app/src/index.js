@@ -10,6 +10,10 @@ import Header from "./components/Header";
 import Footer from "./components/Footer";
 import Article from "./components/Article";
 import NewArticle from "./components/NewArticle";
+import FourOhFour from "./components/FourOhFour";
+import SettingsPage from "./components/SettingsPage";
+import Pagination from "./components/Pagination";
+import User from "./components/User";
 
 ReactDOM.render(
   <React.StrictMode>
@@ -17,6 +21,7 @@ ReactDOM.render(
       <Header />
       <Switch>
         <Route exact path="/" component={App} />
+        <Route path="/page/:pageNum" component={Pagination} />
         <Route path="/login">
           <Login />
         </Route>
@@ -27,6 +32,9 @@ ReactDOM.render(
           <NewArticle />
         </Route>
         <Route path="/articles/:id" component={Article} />
+        <Route path="/settings" component={SettingsPage} />
+        <Route path="/user/:id" component={User} />
+        <Route component={FourOhFour} />
       </Switch>
       <Footer />
     </Router>
